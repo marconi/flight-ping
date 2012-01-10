@@ -16,6 +16,17 @@
 		B16F89F514BB6E3C0098A8C3 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F89F314BB6E3C0098A8C3 /* MainWindow.xib */; };
 		B16F89F814BB6E3C0098A8C3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F89F714BB6E3C0098A8C3 /* RootViewController.m */; };
 		B16F89FB14BB6E3C0098A8C3 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F89F914BB6E3C0098A8C3 /* RootViewController.xib */; };
+		B16F8A0C14BB71190098A8C3 /* OriginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F8A0A14BB71190098A8C3 /* OriginViewController.m */; };
+		B16F8A0D14BB71190098A8C3 /* OriginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F8A0B14BB71190098A8C3 /* OriginViewController.xib */; };
+		B16F8A1914BB74E70098A8C3 /* DestinationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F8A1714BB74E70098A8C3 /* DestinationViewController.m */; };
+		B16F8A1A14BB74E70098A8C3 /* DestinationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F8A1814BB74E70098A8C3 /* DestinationViewController.xib */; };
+		B16F8A1E14BB759E0098A8C3 /* FlightScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F8A1C14BB759D0098A8C3 /* FlightScheduleViewController.m */; };
+		B16F8A1F14BB759E0098A8C3 /* FlightScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F8A1D14BB759D0098A8C3 /* FlightScheduleViewController.xib */; };
+		B16F8A2214BB77FC0098A8C3 /* FlightNumberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F8A2114BB77FC0098A8C3 /* FlightNumberCell.m */; };
+		B16F8A2414BB78780098A8C3 /* FlightNumberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F8A2314BB78770098A8C3 /* FlightNumberCell.xib */; };
+		B16F8A2E14BB84D00098A8C3 /* FlightScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F8A2D14BB84D00098A8C3 /* FlightScheduleCell.xib */; };
+		B16F8A3114BB84E70098A8C3 /* FlightScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F8A3014BB84E60098A8C3 /* FlightScheduleCell.m */; };
+		B18F87EA14BCCC9500F39218 /* OriginDestination.plist in Resources */ = {isa = PBXBuildFile; fileRef = B18F87E914BCCC9500F39218 /* OriginDestination.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +34,32 @@
 		B16F89E114BB6E3C0098A8C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B16F89E314BB6E3C0098A8C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B16F89E514BB6E3C0098A8C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		B16F89E914BB6E3C0098A8C3 /* FlightPing-Info.plist */ = {isa = PBXFileReference; path = "FlightPing-Info.plist"; sourceTree = "<group>"; };
+		B16F89E914BB6E3C0098A8C3 /* FlightPing-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlightPing-Info.plist"; sourceTree = "<group>"; };
 		B16F89EB14BB6E3C0098A8C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		B16F89ED14BB6E3C0098A8C3 /* FlightPing-Prefix.pch */ = {isa = PBXFileReference; path = "FlightPing-Prefix.pch"; sourceTree = "<group>"; };
+		B16F89ED14BB6E3C0098A8C3 /* FlightPing-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FlightPing-Prefix.pch"; sourceTree = "<group>"; };
 		B16F89EE14BB6E3C0098A8C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B16F89F014BB6E3C0098A8C3 /* FlightPingAppDelegate.h */ = {isa = PBXFileReference; path = FlightPingAppDelegate.h; sourceTree = "<group>"; };
+		B16F89F014BB6E3C0098A8C3 /* FlightPingAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FlightPingAppDelegate.h; sourceTree = "<group>"; };
 		B16F89F114BB6E3C0098A8C3 /* FlightPingAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlightPingAppDelegate.m; sourceTree = "<group>"; };
 		B16F89F414BB6E3C0098A8C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		B16F89F614BB6E3C0098A8C3 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		B16F89F614BB6E3C0098A8C3 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		B16F89F714BB6E3C0098A8C3 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		B16F89FA14BB6E3C0098A8C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		B16F8A0914BB71190098A8C3 /* OriginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OriginViewController.h; sourceTree = "<group>"; };
+		B16F8A0A14BB71190098A8C3 /* OriginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OriginViewController.m; sourceTree = "<group>"; };
+		B16F8A0B14BB71190098A8C3 /* OriginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OriginViewController.xib; sourceTree = "<group>"; };
+		B16F8A1614BB74E70098A8C3 /* DestinationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DestinationViewController.h; sourceTree = "<group>"; };
+		B16F8A1714BB74E70098A8C3 /* DestinationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DestinationViewController.m; sourceTree = "<group>"; };
+		B16F8A1814BB74E70098A8C3 /* DestinationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DestinationViewController.xib; sourceTree = "<group>"; };
+		B16F8A1B14BB759D0098A8C3 /* FlightScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightScheduleViewController.h; sourceTree = "<group>"; };
+		B16F8A1C14BB759D0098A8C3 /* FlightScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightScheduleViewController.m; sourceTree = "<group>"; };
+		B16F8A1D14BB759D0098A8C3 /* FlightScheduleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightScheduleViewController.xib; sourceTree = "<group>"; };
+		B16F8A2014BB77FC0098A8C3 /* FlightNumberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightNumberCell.h; sourceTree = "<group>"; };
+		B16F8A2114BB77FC0098A8C3 /* FlightNumberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightNumberCell.m; sourceTree = "<group>"; };
+		B16F8A2314BB78770098A8C3 /* FlightNumberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightNumberCell.xib; sourceTree = "<group>"; };
+		B16F8A2D14BB84D00098A8C3 /* FlightScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightScheduleCell.xib; sourceTree = "<group>"; };
+		B16F8A2F14BB84E60098A8C3 /* FlightScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightScheduleCell.h; sourceTree = "<group>"; };
+		B16F8A3014BB84E60098A8C3 /* FlightScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightScheduleCell.m; sourceTree = "<group>"; };
+		B18F87E914BCCC9500F39218 /* OriginDestination.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OriginDestination.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,13 +106,22 @@
 		B16F89E714BB6E3C0098A8C3 /* FlightPing */ = {
 			isa = PBXGroup;
 			children = (
+				B18F87E714BCCB5E00F39218 /* NibFIles */,
 				B16F89F014BB6E3C0098A8C3 /* FlightPingAppDelegate.h */,
 				B16F89F114BB6E3C0098A8C3 /* FlightPingAppDelegate.m */,
-				B16F89F314BB6E3C0098A8C3 /* MainWindow.xib */,
 				B16F89F614BB6E3C0098A8C3 /* RootViewController.h */,
 				B16F89F714BB6E3C0098A8C3 /* RootViewController.m */,
-				B16F89F914BB6E3C0098A8C3 /* RootViewController.xib */,
+				B16F8A2014BB77FC0098A8C3 /* FlightNumberCell.h */,
+				B16F8A2114BB77FC0098A8C3 /* FlightNumberCell.m */,
+				B16F8A1614BB74E70098A8C3 /* DestinationViewController.h */,
+				B16F8A1714BB74E70098A8C3 /* DestinationViewController.m */,
+				B16F8A1B14BB759D0098A8C3 /* FlightScheduleViewController.h */,
+				B16F8A1C14BB759D0098A8C3 /* FlightScheduleViewController.m */,
+				B16F8A0914BB71190098A8C3 /* OriginViewController.h */,
+				B16F8A0A14BB71190098A8C3 /* OriginViewController.m */,
 				B16F89E814BB6E3C0098A8C3 /* Supporting Files */,
+				B16F8A2F14BB84E60098A8C3 /* FlightScheduleCell.h */,
+				B16F8A3014BB84E60098A8C3 /* FlightScheduleCell.m */,
 			);
 			path = FlightPing;
 			sourceTree = "<group>";
@@ -93,12 +129,27 @@
 		B16F89E814BB6E3C0098A8C3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B18F87E914BCCC9500F39218 /* OriginDestination.plist */,
 				B16F89E914BB6E3C0098A8C3 /* FlightPing-Info.plist */,
 				B16F89EA14BB6E3C0098A8C3 /* InfoPlist.strings */,
 				B16F89ED14BB6E3C0098A8C3 /* FlightPing-Prefix.pch */,
 				B16F89EE14BB6E3C0098A8C3 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B18F87E714BCCB5E00F39218 /* NibFIles */ = {
+			isa = PBXGroup;
+			children = (
+				B16F89F314BB6E3C0098A8C3 /* MainWindow.xib */,
+				B16F8A1814BB74E70098A8C3 /* DestinationViewController.xib */,
+				B16F89F914BB6E3C0098A8C3 /* RootViewController.xib */,
+				B16F8A1D14BB759D0098A8C3 /* FlightScheduleViewController.xib */,
+				B16F8A0B14BB71190098A8C3 /* OriginViewController.xib */,
+				B16F8A2314BB78770098A8C3 /* FlightNumberCell.xib */,
+				B16F8A2D14BB84D00098A8C3 /* FlightScheduleCell.xib */,
+			);
+			name = NibFIles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +202,12 @@
 				B16F89EC14BB6E3C0098A8C3 /* InfoPlist.strings in Resources */,
 				B16F89F514BB6E3C0098A8C3 /* MainWindow.xib in Resources */,
 				B16F89FB14BB6E3C0098A8C3 /* RootViewController.xib in Resources */,
+				B16F8A0D14BB71190098A8C3 /* OriginViewController.xib in Resources */,
+				B16F8A1A14BB74E70098A8C3 /* DestinationViewController.xib in Resources */,
+				B16F8A1F14BB759E0098A8C3 /* FlightScheduleViewController.xib in Resources */,
+				B16F8A2414BB78780098A8C3 /* FlightNumberCell.xib in Resources */,
+				B16F8A2E14BB84D00098A8C3 /* FlightScheduleCell.xib in Resources */,
+				B18F87EA14BCCC9500F39218 /* OriginDestination.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,6 +221,11 @@
 				B16F89EF14BB6E3C0098A8C3 /* main.m in Sources */,
 				B16F89F214BB6E3C0098A8C3 /* FlightPingAppDelegate.m in Sources */,
 				B16F89F814BB6E3C0098A8C3 /* RootViewController.m in Sources */,
+				B16F8A0C14BB71190098A8C3 /* OriginViewController.m in Sources */,
+				B16F8A1914BB74E70098A8C3 /* DestinationViewController.m in Sources */,
+				B16F8A1E14BB759E0098A8C3 /* FlightScheduleViewController.m in Sources */,
+				B16F8A2214BB77FC0098A8C3 /* FlightNumberCell.m in Sources */,
+				B16F8A3114BB84E70098A8C3 /* FlightScheduleCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +338,7 @@
 				B16F8A0014BB6E3C0098A8C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

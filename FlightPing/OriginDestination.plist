@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Root</key>
+	<dict>
+		<key>Domestic</key>
+		<dict>
+			<key>100</key>
+			<string>Cauayan</string>
+			<key>110</key>
+			<string>Catarman</string>
+			<key>12</key>
+			<string>Clark</string>
+			<key>13</key>
+			<string>Manila</string>
+			<key>14</key>
+			<string>Davao</string>
+			<key>15</key>
+			<string>Dipolog</string>
+			<key>16</key>
+			<string>Cagayan De Oro</string>
+			<key>17</key>
+			<string>Legazpi</string>
+			<key>18</key>
+			<string>Tacloban</string>
+			<key>19</key>
+			<string>Dumaguete</string>
+			<key>20</key>
+			<string>Boracay</string>
+			<key>21</key>
+			<string>Iloilo</string>
+			<key>22</key>
+			<string>Kalibo</string>
+			<key>23</key>
+			<string>Cebu</string>
+			<key>24</key>
+			<string>Puerto Princesa</string>
+			<key>25</key>
+			<string>Laoag</string>
+			<key>26</key>
+			<string>Roxas</string>
+			<key>27</key>
+			<string>Tagbilaran</string>
+			<key>28</key>
+			<string>General Santos</string>
+			<key>29</key>
+			<string>Cotabato</string>
+			<key>30</key>
+			<string>Butuan</string>
+			<key>39</key>
+			<string>Zamboanga</string>
+			<key>43</key>
+			<string>Tuguegarao</string>
+			<key>44</key>
+			<string>Naga</string>
+			<key>45</key>
+			<string>San Jose</string>
+			<key>49</key>
+			<string>Busuanga</string>
+			<key>50</key>
+			<string>Ozamiz</string>
+			<key>51</key>
+			<string>Surigao</string>
+			<key>52</key>
+			<string>Pagadian</string>
+			<key>65</key>
+			<string>Tawi-tawi</string>
+			<key>8</key>
+			<string>Bacolod</string>
+			<key>87</key>
+			<string>Virac</string>
+			<key>95</key>
+			<string>Calbayog</string>
+			<key>98</key>
+			<string>Siargao</string>
+		</dict>
+		<key>International</key>
+		<dict>
+			<key>84</key>
+			<string>Bandar Seri Begawan (Brunei)</string>
+			<key>31</key>
+			<string>Bangkok</string>
+			<key>75</key>
+			<string>Beijing</string>
+			<key>40</key>
+			<string>Busan</string>
+			<key>32</key>
+			<string>Guangzhou</string>
+			<key>34</key>
+			<string>Hong Kong</string>
+			<key>10</key>
+			<string>Incheon</string>
+			<key>35</key>
+			<string>Jakarta</string>
+			<key>46</key>
+			<string>Kota Kinabalu</string>
+			<key>36</key>
+			<string>Kuala Lumpur</string>
+			<key>37</key>
+			<string>Macau</string>
+			<key>42</key>
+			<string>Osaka, Kansai</string>
+			<key>41</key>
+			<string>Saigon</string>
+			<key>33</key>
+			<string>Shanghai</string>
+			<key>5</key>
+			<string>Singapore</string>
+			<key>9</key>
+			<string>Taipei</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

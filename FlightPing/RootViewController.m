@@ -7,12 +7,23 @@
 //
 
 #import "RootViewController.h"
+#import "OriginViewController.h"
+#import "DestinationViewController.h"
+#import "FlightScheduleViewController.h"
+#import "FlightNumberCell.h"
+#import "FlightScheduleCell.h"
 
 @implementation RootViewController
+
+@synthesize flightNumberCell;
+@synthesize flightScheduleCell;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    fields = [[NSArray alloc]
+              initWithObjects:@"Origin", @"Destination", @"Flight Number", @"Flight Schedule", nil];
+    self.title = @"Flight Ping";
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -46,25 +57,52 @@
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    if (section == 0) {
+        return 3;
+    }
+    else {
+        return 1;
+    }
 }
 
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+    UITableViewCell *cell;
+    switch ([indexPath row]) {
+        case 2:
+            cell = (FlightNumberCell *)[tableView dequeueReusableCellWithIdentifier:@"flightNumberCell"];
+            if (cell == nil) {
+                [[NSBundle mainBundle] loadNibNamed:@"FlightNumberCell" owner:self options:nil];
+                cell = flightNumberCell;
+            }
+            break;
+        case 0:
+            if ([indexPath section] == 1) {
+                cell = (FlightScheduleCell *)[tableView dequeueReusableCellWithIdentifier:@"flightScheduleCell"];
+                if (cell == nil) {
+                    [[NSBundle mainBundle] loadNibNamed:@"FlightScheduleCell" owner:self options:nil];
+                    cell = flightScheduleCell;
+                }
+                break;
+            }
+        default:
+            cell = [tableView dequeueReusableCellWithIdentifier:@"defaultCell"];
+            if (cell == nil) {
+                cell = [[[UITableViewCell alloc]
+                         initWithStyle:UITableViewCellStyleDefault
+                         reuseIdentifier:@"defaultCell"] autorelease];
+                [cell textLabel].text = [fields objectAtIndex:[indexPath row]];
+                [cell textLabel].textColor = [UIColor grayColor];
+                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            }
+            break;
     }
-
-    // Configure the cell.
     return cell;
 }
 
@@ -111,13 +149,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    /*
-    <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-    // ...
-    // Pass the selected object to the new view controller.
-    [self.navigationController pushViewController:detailViewController animated:YES];
-    [detailViewController release];
-	*/
+    id subViewController;
+    switch ([indexPath row]) {
+        case 0:  // origin
+            subViewController = [[OriginViewController alloc]
+                                 initWithNibName:@"OriginViewController" bundle:nil];
+            break;
+        case 1:
+            subViewController = [[DestinationViewController alloc]
+                                 initWithNibName:@"DestinationViewController" bundle:nil];
+            break;
+    }
+    
+    // push it to navigation
+    if ([indexPath row] <= 1) {
+        [self.navigationController pushViewController:subViewController animated:YES];
+        [subViewController release];
+    }
 }
 
 - (void)didReceiveMemoryWarning
