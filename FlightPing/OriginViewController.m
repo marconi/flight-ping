@@ -35,7 +35,6 @@
     }
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (cell == nil) {
@@ -60,7 +59,27 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // TODO: tell the root to set the selected item
+    NSString *section;
+    if ([indexPath section] == 0) {
+        section = @"Domestic";
+    }
+    else {
+        section = @"International";
+    }
+
+    NSArray *sectionDict = [[[originDestination objectForKey:section] allValues]
+                            sortedArrayUsingSelector:@selector(caseInsensitiveCompare:)];
+    NSString *originStr = [sectionDict objectAtIndex:[indexPath row]];
+    NSArray *originId = [[originDestination objectForKey:section] allKeysForObject:originStr];
+
+    NSLog(@"%@", sectionDict);
+    NSLog(@"%@", originStr);
+
+    delegate.origin = [[originId objectAtIndex:0] intValue];
+    delegate.originStr = originStr;
+
+    [section release];
+    [[delegate navigationController] popViewControllerAnimated:YES];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -85,6 +104,14 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+- (id)delegate {
+    return delegate;
+}
+
+- (void)setDelegate:(id)newDelegate {
+    delegate = newDelegate;
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -98,7 +125,6 @@
     originDestination = [[[NSMutableDictionary alloc]
                           initWithContentsOfFile:originDestinationFile]
                          objectForKey:@"Root"];
-//    fruits = [rootDict objectForKey:@"Root"];
     NSLog(@"%@", originDestination);
 }
 

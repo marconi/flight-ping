@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RootViewController.h"
 
 
-@interface DestinationViewController : UIViewController {
-    
+@interface DestinationViewController : UIViewController
+    <UITableViewDataSource, UITableViewDelegate> {
+    NSMutableDictionary *originDestination;
+    RootViewController *delegate;
 }
+
+- (id)delegate;
+- (void)setDelegate:(id)newDelegate;
 
 @end

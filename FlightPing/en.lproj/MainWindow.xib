@@ -132,6 +132,14 @@
 					</object>
 					<int key="connectionID">15</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">doSearch</string>
+						<reference key="source" ref="1021430368"/>
+						<reference key="destination" ref="619226028"/>
+					</object>
+					<int key="connectionID">19</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -200,7 +208,7 @@
 						<reference key="parent" ref="619226028"/>
 					</object>
 					<object class="IBObjectRecord">
-						<int key="objectID">17</int>
+						<int key="objectID">18</int>
 						<reference key="object" ref="1021430368"/>
 						<reference key="parent" ref="394667715"/>
 					</object>
@@ -215,7 +223,7 @@
 					<string>11.IBPluginDependency</string>
 					<string>13.CustomClassName</string>
 					<string>13.IBPluginDependency</string>
-					<string>17.IBPluginDependency</string>
+					<string>18.IBPluginDependency</string>
 					<string>2.IBAttributePlaceholdersKey</string>
 					<string>2.IBEditorWindowLastContentRect</string>
 					<string>2.IBPluginDependency</string>
@@ -257,7 +265,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">17</int>
+			<int key="maxID">19</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -343,17 +351,30 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">RootViewController</string>
 					<string key="superclassName">UIViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">doSearch</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">doSearch</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">doSearch</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>
 						<object class="NSArray" key="dict.sortedKeys">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>flightNumberCell</string>
 							<string>flightScheduleCell</string>
+							<string>mainTable</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>FlightNumberCell</string>
 							<string>FlightScheduleCell</string>
+							<string>UITableView</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -362,6 +383,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>flightNumberCell</string>
 							<string>flightScheduleCell</string>
+							<string>mainTable</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -372,6 +394,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">flightScheduleCell</string>
 								<string key="candidateClassName">FlightScheduleCell</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">mainTable</string>
+								<string key="candidateClassName">UITableView</string>
 							</object>
 						</object>
 					</object>

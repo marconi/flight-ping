@@ -10,13 +10,67 @@
 #import "OriginViewController.h"
 #import "DestinationViewController.h"
 #import "FlightScheduleViewController.h"
-#import "FlightNumberCell.h"
 #import "FlightScheduleCell.h"
+#import "FlightNumberViewController.h"
+
+#import "ASIFormDataRequest.h"
+#import "JSON.h"
 
 @implementation RootViewController
 
-@synthesize flightNumberCell;
+@synthesize origin;
+@synthesize destination;
+@synthesize originStr;
+@synthesize destinationStr;
+@synthesize mainTable;
 @synthesize flightScheduleCell;
+@synthesize flightSchedule;
+@synthesize flightNumber;
+
+- (void) AlertWithMessage: (NSString *)message {
+    /* open an alert with an OK button */
+    UIAlertView *alert = [[UIAlertView alloc]
+                          initWithTitle:@"Flight Ping" 
+                          message:message
+                          delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles: nil];
+    [alert show];
+    [alert release];
+}
+
+- (IBAction) doSearch {
+
+    NSDateFormatter *dateFormatter = [[[NSDateFormatter alloc] init] autorelease];
+    [dateFormatter setDateFormat:@"dd MMMM yyyy"];
+    NSString *flightDate = [dateFormatter stringFromDate:flightSchedule.date];
+    
+    NSURL *url = [NSURL URLWithString:@"http://localhost:8000/ping"];
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
+    [request setTimeOutSeconds:60];
+    [request setPostValue:[NSString stringWithFormat:@"%d", origin] forKey:@"origin"];
+    [request setPostValue:[NSString stringWithFormat:@"%d", destination] forKey:@"destination"];
+    [request setPostValue:flightDate forKey:@"flightschedule"];
+    [request setPostValue:flightNumber forKey:@"flightnumber"];
+    [request startSynchronous];
+    NSError *error = [request error];
+    if (!error) {
+        SBJsonParser *parser = [[SBJsonParser alloc] init];
+        NSDictionary *response = [parser objectWithString:[request responseString] error:nil];
+        NSLog(@"%@", response);
+        NSString *msg = [[NSString alloc]
+                         initWithFormat:@"Your flight numer %@ bound for %@ to %@ is '%@'",
+                            [response objectForKey:@"flightNo"],
+                            [response objectForKey:@"origin"],
+                            [response objectForKey:@"destination"],
+                            [response objectForKey:@"status"]];
+        [self AlertWithMessage:msg];
+    }
+    else {
+        NSLog(@"%@", error);
+    }
+    // TODO: this thing shouldn't yiel until the PhantomJS request returns!
+}
 
 - (void)viewDidLoad
 {
@@ -29,6 +83,11 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    if (originStr != nil || destinationStr != nil || flightNumber != nil) {
+        [mainTable reloadData];
+    }
+    flightSchedule.date = [NSDate date];
+    NSLog(@"%@", [NSDate date]);
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -75,14 +134,8 @@
 {
     UITableViewCell *cell;
     switch ([indexPath row]) {
-        case 2:
-            cell = (FlightNumberCell *)[tableView dequeueReusableCellWithIdentifier:@"flightNumberCell"];
-            if (cell == nil) {
-                [[NSBundle mainBundle] loadNibNamed:@"FlightNumberCell" owner:self options:nil];
-                cell = flightNumberCell;
-            }
-            break;
         case 0:
+            // if this is first row, second section, load the DatePicker for schedule.
             if ([indexPath section] == 1) {
                 cell = (FlightScheduleCell *)[tableView dequeueReusableCellWithIdentifier:@"flightScheduleCell"];
                 if (cell == nil) {
@@ -91,78 +144,66 @@
                 }
                 break;
             }
-        default:
+        default:  // in row 2, 3 and 4
+            NSLog(@"%@", flightNumber);
             cell = [tableView dequeueReusableCellWithIdentifier:@"defaultCell"];
             if (cell == nil) {
                 cell = [[[UITableViewCell alloc]
                          initWithStyle:UITableViewCellStyleDefault
                          reuseIdentifier:@"defaultCell"] autorelease];
+            }
+
+            // origin
+            if ([indexPath section] == 0 && [indexPath row] == 0 && originStr != nil) {
+                [cell textLabel].text = originStr;
+                [cell textLabel].textColor = [UIColor blueColor];
+            }
+
+            // destination
+            else if ([indexPath section] == 0 && [indexPath row] == 1 && destinationStr != nil) {
+                [cell textLabel].text = destinationStr;
+                [cell textLabel].textColor = [UIColor blueColor];
+            }
+
+            // flight number
+            else if ([indexPath section] == 0 && [indexPath row] == 2 && flightNumber != nil) {
+                [cell textLabel].text = flightNumber;
+                [cell textLabel].textColor = [UIColor blueColor];
+            }
+            
+            // others
+            else {
                 [cell textLabel].text = [fields objectAtIndex:[indexPath row]];
                 [cell textLabel].textColor = [UIColor grayColor];
-                cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
             }
+            
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;            
             break;
     }
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete)
-    {
-        // Delete the row from the data source.
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }
-    else if (editingStyle == UITableViewCellEditingStyleInsert)
-    {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    id subViewController;
+    UIViewController *subViewController;
     switch ([indexPath row]) {
         case 0:  // origin
             subViewController = [[OriginViewController alloc]
                                  initWithNibName:@"OriginViewController" bundle:nil];
             break;
-        case 1:
+        case 1:  // destination
             subViewController = [[DestinationViewController alloc]
                                  initWithNibName:@"DestinationViewController" bundle:nil];
             break;
+        case 2:  // flight number
+            subViewController = [[FlightNumberViewController alloc]
+                                 initWithNibName:@"FlightNumberViewController" bundle:nil];
+            break;
     }
-    
+
     // push it to navigation
-    if ([indexPath row] <= 1) {
+    if ([indexPath row] <= 2) {  // only allow origin, destination and flight number
+        [subViewController setDelegate:self];
         [self.navigationController pushViewController:subViewController animated:YES];
         [subViewController release];
     }
@@ -179,9 +220,7 @@
 - (void)viewDidUnload
 {
     [super viewDidUnload];
-
-    // Relinquish ownership of anything that can be recreated in viewDidLoad or on demand.
-    // For example: self.myOutlet = nil;
+    [fields release];
 }
 
 - (void)dealloc
