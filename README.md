@@ -14,6 +14,6 @@ FlightPing is my first attempt in building an iPhone application that lets you c
 - Run the middleware: python middleware.py
 - Run xcode project
 
-# Screenshots
+# Screenshot:
 
 ![Demo](http://github.marconijr.com/flightping/demo.png)
