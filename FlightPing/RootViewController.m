@@ -54,12 +54,13 @@
     [request setPostValue:flightNumber forKey:@"flightnumber"];
     [request startSynchronous];
     NSError *error = [request error];
+    NSLog(@"%@", error);
     if (!error) {
         SBJsonParser *parser = [[SBJsonParser alloc] init];
         NSDictionary *response = [parser objectWithString:[request responseString] error:nil];
         NSLog(@"%@", response);
         NSString *msg = [[NSString alloc]
-                         initWithFormat:@"Your flight numer %@ bound for %@ to %@ is '%@'",
+                         initWithFormat:@"Your flight number %@ bound for %@ to %@ is '%@'",
                             [response objectForKey:@"flightNo"],
                             [response objectForKey:@"origin"],
                             [response objectForKey:@"destination"],

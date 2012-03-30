@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B16F89E214BB6E3C0098A8C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F89E114BB6E3C0098A8C3 /* UIKit.framework */; };
 		B16F89E414BB6E3C0098A8C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F89E314BB6E3C0098A8C3 /* Foundation.framework */; };
-		B16F89E614BB6E3C0098A8C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F89E514BB6E3C0098A8C3 /* CoreGraphics.framework */; };
 		B16F89EC14BB6E3C0098A8C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B16F89EA14BB6E3C0098A8C3 /* InfoPlist.strings */; };
 		B16F89EF14BB6E3C0098A8C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F89EE14BB6E3C0098A8C3 /* main.m */; };
 		B16F89F214BB6E3C0098A8C3 /* FlightPingAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F89F114BB6E3C0098A8C3 /* FlightPingAppDelegate.m */; };
@@ -24,6 +23,11 @@
 		B16F8A1F14BB759E0098A8C3 /* FlightScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F8A1D14BB759D0098A8C3 /* FlightScheduleViewController.xib */; };
 		B16F8A2E14BB84D00098A8C3 /* FlightScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B16F8A2D14BB84D00098A8C3 /* FlightScheduleCell.xib */; };
 		B16F8A3114BB84E70098A8C3 /* FlightScheduleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B16F8A3014BB84E60098A8C3 /* FlightScheduleCell.m */; };
+		B17FAE611525D611002946BE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDBB14CA99BD00A89AA0 /* CFNetwork.framework */; };
+		B17FAE621525D61F002946BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDBD14CA99CA00A89AA0 /* SystemConfiguration.framework */; };
+		B17FAE631525D624002946BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDBF14CA99D300A89AA0 /* MobileCoreServices.framework */; };
+		B17FAE641525D633002946BE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B16F89E514BB6E3C0098A8C3 /* CoreGraphics.framework */; };
+		B17FAE651525D640002946BE /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDC214CA99EA00A89AA0 /* libz.dylib */; };
 		B18F87EA14BCCC9500F39218 /* OriginDestination.plist in Resources */ = {isa = PBXBuildFile; fileRef = B18F87E914BCCC9500F39218 /* OriginDestination.plist */; };
 		B1C6BDB114CA998400A89AA0 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C6BD9814CA998400A89AA0 /* ASIAuthenticationDialog.m */; };
 		B1C6BDB214CA998400A89AA0 /* ASIDataCompressor.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C6BD9B14CA998400A89AA0 /* ASIDataCompressor.m */; };
@@ -34,10 +38,6 @@
 		B1C6BDB714CA998400A89AA0 /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C6BDA714CA998400A89AA0 /* ASIInputStream.m */; };
 		B1C6BDB814CA998400A89AA0 /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C6BDA914CA998400A89AA0 /* ASINetworkQueue.m */; };
 		B1C6BDBA14CA998400A89AA0 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C6BDB014CA998400A89AA0 /* Reachability.m */; };
-		B1C6BDBC14CA99BD00A89AA0 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDBB14CA99BD00A89AA0 /* CFNetwork.framework */; };
-		B1C6BDBE14CA99CA00A89AA0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDBD14CA99CA00A89AA0 /* SystemConfiguration.framework */; };
-		B1C6BDC014CA99D300A89AA0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDBF14CA99D300A89AA0 /* MobileCoreServices.framework */; };
-		B1C6BDC314CA99EA00A89AA0 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B1C6BDC214CA99EA00A89AA0 /* libz.dylib */; };
 		B1C6BDC714CA9C9700A89AA0 /* FlightNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C6BDC514CA9C9700A89AA0 /* FlightNumberViewController.m */; };
 		B1C6BDC814CA9C9700A89AA0 /* FlightNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B1C6BDC614CA9C9700A89AA0 /* FlightNumberViewController.xib */; };
 		B1C6BDDD14CAB51F00A89AA0 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B1C6BDD414CAB51F00A89AA0 /* NSObject+SBJSON.m */; };
@@ -74,6 +74,9 @@
 		B16F8A2D14BB84D00098A8C3 /* FlightScheduleCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FlightScheduleCell.xib; sourceTree = "<group>"; };
 		B16F8A2F14BB84E60098A8C3 /* FlightScheduleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlightScheduleCell.h; sourceTree = "<group>"; };
 		B16F8A3014BB84E60098A8C3 /* FlightScheduleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlightScheduleCell.m; sourceTree = "<group>"; };
+		B17FAE661525D641002946BE /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		B17FAE671525D641002946BE /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		B17FAE681525D641002946BE /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = usr/lib/libz.1.dylib; sourceTree = SDKROOT; };
 		B18F87E914BCCC9500F39218 /* OriginDestination.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = OriginDestination.plist; sourceTree = "<group>"; };
 		B1C6BD9714CA998400A89AA0 /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		B1C6BD9814CA998400A89AA0 /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
@@ -123,11 +126,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B1C6BDC314CA99EA00A89AA0 /* libz.dylib in Frameworks */,
-				B16F89E614BB6E3C0098A8C3 /* CoreGraphics.framework in Frameworks */,
-				B1C6BDC014CA99D300A89AA0 /* MobileCoreServices.framework in Frameworks */,
-				B1C6BDBE14CA99CA00A89AA0 /* SystemConfiguration.framework in Frameworks */,
-				B1C6BDBC14CA99BD00A89AA0 /* CFNetwork.framework in Frameworks */,
+				B17FAE651525D640002946BE /* libz.dylib in Frameworks */,
+				B17FAE641525D633002946BE /* CoreGraphics.framework in Frameworks */,
+				B17FAE631525D624002946BE /* MobileCoreServices.framework in Frameworks */,
+				B17FAE621525D61F002946BE /* SystemConfiguration.framework in Frameworks */,
+				B17FAE611525D611002946BE /* CFNetwork.framework in Frameworks */,
 				B16F89E214BB6E3C0098A8C3 /* UIKit.framework in Frameworks */,
 				B16F89E414BB6E3C0098A8C3 /* Foundation.framework in Frameworks */,
 			);
@@ -139,6 +142,9 @@
 		B16F89D214BB6E3C0098A8C3 = {
 			isa = PBXGroup;
 			children = (
+				B17FAE661525D641002946BE /* libz.1.1.3.dylib */,
+				B17FAE671525D641002946BE /* libz.1.2.5.dylib */,
+				B17FAE681525D641002946BE /* libz.1.dylib */,
 				B16F89E714BB6E3C0098A8C3 /* FlightPing */,
 				B16F89E014BB6E3C0098A8C3 /* Frameworks */,
 				B16F89DE14BB6E3C0098A8C3 /* Products */,
@@ -315,6 +321,9 @@
 /* Begin PBXProject section */
 		B16F89D414BB6E3C0098A8C3 /* Project object */ = {
 			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
 			buildConfigurationList = B16F89D714BB6E3C0098A8C3 /* Build configuration list for PBXProject "FlightPing" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
@@ -451,6 +460,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightPing/FlightPing-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FlightPing/FlightPing-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -464,6 +474,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FlightPing/FlightPing-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "FlightPing/FlightPing-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
